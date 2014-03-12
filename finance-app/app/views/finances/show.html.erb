@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @finance.name %>
+</p>
+
+<p>
+  <strong>Sector:</strong>
+  <%= @finance.sector %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @finance.price %>
+</p>
+
+<p>
+  <strong>Dividend yield:</strong>
+  <%= @finance.dividend_yield %>
+</p>
+
+<p>
+  <strong>Price earnings:</strong>
+  <%= @finance.price_earnings %>
+</p>
+
+<p>
+  <strong>Earnings share:</strong>
+  <%= @finance.earnings_share %>
+</p>
+
+<p>
+  <strong>Book value:</strong>
+  <%= @finance.book_value %>
+</p>
+
+<p>
+  <strong>Year week low:</strong>
+  <%= @finance.year_week_low %>
+</p>
+
+<p>
+  <strong>Year week high:</strong>
+  <%= @finance.year_week_high %>
+</p>
+
+<p>
+  <strong>Market cap:</strong>
+  <%= @finance.market_cap %>
+</p>
+
+<p>
+  <strong>Ebitda:</strong>
+  <%= @finance.ebitda %>
+</p>
+
+<%= link_to 'Edit', edit_finance_path(@finance) %> |
+<%= link_to 'Back', finances_path %>
