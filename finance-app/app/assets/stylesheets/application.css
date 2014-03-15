@@ -11,7 +11,6 @@
  *= require_self
  *= require_tree .
  */
-
 html {
 	/*background-color: #6d9ab9;*/
 	background-image: url("bg.jpg");
@@ -20,6 +19,11 @@ html {
 	background-attachment:fixed;
 
 }
+
+/*.bg {
+	background-color: #fff;
+	float: left;
+}*/
 
 select {
 	width: 180px;
@@ -32,9 +36,7 @@ select {
 	background-color: #fff;
 	float: left;
 	padding-left: 10px;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
+	border-radius: 10px;
 	margin-top: 30px;
 	max-width: 280px;
 	padding-bottom: 10px;
@@ -45,11 +47,8 @@ select {
 	background-color: #fff;
 	z-index: 0;
 	margin-left: 320px;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
+	border-radius: 10px;
 	margin-top: 30px;
-	max-width: 610px;
 }
 
 .navbar{
@@ -59,9 +58,9 @@ select {
 	background-color: #000;
 	position: fixed;
 	top: 0px;
-	padding-bottom: 10px;
+	padding-bottom: 7px;
 	z-index: 9999;
-	padding-top: 10px;
+	padding-top: 5px;
 
 }
 
@@ -69,5 +68,9 @@ select {
 	float: left;
 	position: relative;
 	color: #fff;
+}
+
+.grid_12 {
+	/*background-color: #1D5073;*/
 }
 
