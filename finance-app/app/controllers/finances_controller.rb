@@ -7,6 +7,26 @@ class FinancesController < ApplicationController
     @finances = Finance.all
   end
 
+  def select
+    
+    if params[:sector] == "all" && params[:name] == "all"
+      @finances = Finance.all
+      @status = "We have found #{@finances.size} company(s) matching your criteria"
+    elsif params[:sector] == "all" && params[:name] != "all"
+      @finances = Finance.where("name = ?", params[:name])
+      @status = "We have found #{@finances.size} company(s) matching your criteria"
+    elsif params[:sector] != "all" && params[:name] == "all"
+      @finances = Finance.where("sector = ?", params[:sector])
+      @status = "We have found #{@finances.size} company(s) matching your criteria"
+    else
+      @finances = Finance.where("sector = ? AND name = ?", params[:sector], params[:name])
+      @status = "We have found #{@finances.size} company(s) matching your criteria"
+      if @finances.size == 0
+        @status = "No companies found"
+      end
+    end
+    render :layout => 'select'
+  end
   # GET /finances/1
   # GET /finances/1.json
   def show

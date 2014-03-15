@@ -1,47 +1,47 @@
-<h1>Listing finances</h1>
+<script>
+  function loadXMLDoc()
+  {
+  var xmlhttp;
+  if (window.XMLHttpRequest)
+    {// code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp=new XMLHttpRequest();
+    }
+  else
+    {// code for IE6, IE5
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+  xmlhttp.onreadystatechange=function()
+    {
+    if (xmlhttp.readyState==4 && xmlhttp.status==200)
+      {
+      document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+      }
+    }
+  var str = $( "form" ).serialize();
+  xmlhttp.open("GET","select.html?"+str,true);
+  xmlhttp.send();
+  }
+</script>
+<h1>Listing Company</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Sector</th>
-      <th>Price</th>
-      <th>Dividend yield</th>
-      <th>Price earnings</th>
-      <th>Earnings share</th>
-      <th>Book value</th>
-      <th>Year week low</th>
-      <th>Year week high</th>
-      <th>Market cap</th>
-      <th>Ebitda</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @finances.each do |finance| %>
-      <tr>
-        <td><%= finance.name %></td>
-        <td><%= finance.sector %></td>
-        <td><%= finance.price %></td>
-        <td><%= finance.dividend_yield %></td>
-        <td><%= finance.price_earnings %></td>
-        <td><%= finance.earnings_share %></td>
-        <td><%= finance.book_value %></td>
-        <td><%= finance.year_week_low %></td>
-        <td><%= finance.year_week_high %></td>
-        <td><%= finance.market_cap %></td>
-        <td><%= finance.ebitda %></td>
-        <td><%= link_to 'Show', finance %></td>
-        <td><%= link_to 'Edit', edit_finance_path(finance) %></td>
-        <td><%= link_to 'Destroy', finance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div id="sidebar" class="grid_4">
+  <form>
+    <p><strong>Please select Sector and Location</strong></p>
+    <select name="sector">
+      <option value="all">All</option>
+      <option value="Information Technology">Information Technology</option>
+      <option value="Health Care">Health Care</option>
+      <option value="Utilities">Utilities</option>
+      <option value="Financials">Financials</option>
+    </select><br/>
+    <select name="name">
+      <option value="all">All</option>
+      <option value="Accenture">Accenture</option>
+    </select><br/>
+  </form>
+  <button type="button" onclick="loadXMLDoc()">Show</button>
+</div>
+<div id="myDiv" width="100%">
+</div>
 
 <br>
-
-<%= link_to 'New Finance', new_finance_path %>

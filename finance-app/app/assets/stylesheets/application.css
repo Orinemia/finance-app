@@ -11,3 +11,19 @@
  *= require_self
  *= require_tree .
  */
+select {
+	width: 180px;
+	margin-bottom: 10px;
+}
+
+#sidebar {
+	margin-top: 0px;
+}
+
+.navbar{
+	float: right;
+}
+
+.navitem {
+	position: relative;
+}
