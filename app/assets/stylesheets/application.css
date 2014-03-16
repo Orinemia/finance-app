@@ -27,10 +27,9 @@ select {
 }
 
 .sidebar {
-	margin-left: 10px;
+	/*margin-left: 10px;*/
 	position: fixed;
 	background-color: #fff;
-	float: left;
 	padding-left: 10px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -49,7 +48,7 @@ select {
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 	margin-top: 30px;
-	max-width: 630px;
+	min-width: 650px;
 	float: left;
 	margin-bottom: 10px;
 }
