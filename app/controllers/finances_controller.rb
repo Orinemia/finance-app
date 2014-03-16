@@ -31,7 +31,7 @@ class FinancesController < ApplicationController
   # GET /finances/1
   # GET /finances/1.json
   def show
-    @finances = Finance.find(params[:id])
+    @finance = Finance.find(params[:id])
   end
 
   # GET /finances/new
