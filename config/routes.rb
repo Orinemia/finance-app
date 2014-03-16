@@ -3,6 +3,7 @@ FinanceApp::Application.routes.draw do
   get 'select' => 'finances#select'
   get 'login' => 'finances#login'
   get 'signup' => 'finances#signup'
+  get 'show' => 'finance#show'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

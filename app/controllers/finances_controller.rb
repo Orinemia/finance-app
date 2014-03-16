@@ -31,6 +31,7 @@ class FinancesController < ApplicationController
   # GET /finances/1
   # GET /finances/1.json
   def show
+    @finances = Finance.find(params[:id])
   end
 
   # GET /finances/new
@@ -85,7 +86,6 @@ class FinancesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_finance
-      @finance = Finance.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
