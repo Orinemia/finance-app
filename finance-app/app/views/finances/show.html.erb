@@ -1,3 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      #map-canvas { height: 50%;
+        width: 50%;}
+    </style>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvxrtNIzHIO-kUxuK82OFKETpX9gBqkTg&sensor=false">
+    </script>
+    <script type="text/javascript">
+      function initialize() {
+        var mapOptions = {
+          center: new google.maps.LatLng(-34.397, 150.644),
+          zoom: 8
+        };
+        var map = new google.maps.Map(document.getElementById("map-canvas"),
+            mapOptions);
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+  </head>
+  <body>
+
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -54,5 +82,10 @@
   <strong>Ebitda:</strong>
   <%= @finance.ebitda %>
 </p>
+
+<div id="map-canvas"/>
+
+</body>
+</html>
 
 <%= link_to 'Back', finances_path %>
