@@ -36,7 +36,7 @@ select {
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 	margin-top: 30px;
-	max-width: 280px;
+	max-width: 260px;
 	padding-bottom: 10px;
 }
 
@@ -44,12 +44,14 @@ select {
 	position: relative;
 	background-color: #fff;
 	z-index: 0;
-	margin-left: 320px;
+	margin-left: 300px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 	margin-top: 30px;
-	max-width: 610px;
+	max-width: 630px;
+	float: left;
+	margin-bottom: 10px;
 }
 
 .navbar{
@@ -70,4 +72,5 @@ select {
 	position: relative;
 	color: #fff;
 }
+
 

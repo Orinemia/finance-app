@@ -3,7 +3,7 @@ RAILS_ENV = 'development'
 require File.expand_path('../environment', __FILE__)
 
 
-f = File.open("test.txt", "r") #open the data file
+f = File.open("company.txt", "r") #open the data file
 f.each_line do |line| 
    @temp = line.split(",") #seperate each item by comma
    name = @temp[0]
@@ -17,6 +17,11 @@ f.each_line do |line|
    year_week_high = @temp[8]
    market_cap = @temp[9]
    ebitda = @temp[10]
+   location = @temp[11]#as locations contain comma, I used gsub to keep only alphebets and spaces
+   if @temp.size == 13
+      location = "#{@temp[11].delete!"\""}, #{@temp[12].delete!"\""}"
+      location = location.chomp
+   end
    @finance = Finance.new
    @finance.name = name
    @finance.sector = sector
@@ -29,8 +34,10 @@ f.each_line do |line|
    @finance.year_week_high = year_week_high
    @finance.market_cap = market_cap
    @finance.ebitda = ebitda
+   @finance.location = location.to_s
    @finance.save
    puts name
+   puts @temp.size
 end
 
 f.close #close file

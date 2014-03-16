@@ -9,22 +9,23 @@ class FinancesController < ApplicationController
 
   def select
     
-    if params[:sector] == "all" && params[:name] == "all"
+    if params[:sector] == "all" && params[:location] == "all"
       @finances = Finance.all
       @status = "We have found #{@finances.size} company(s) matching your criteria"
-    elsif params[:sector] == "all" && params[:name] != "all"
-      @finances = Finance.where("name = ?", params[:name])
+    elsif params[:sector] == "all" && params[:location] != "all"
+      @finances = Finance.where("location like ?", "%#{params[:location]}%")
       @status = "We have found #{@finances.size} company(s) matching your criteria"
-    elsif params[:sector] != "all" && params[:name] == "all"
-      @finances = Finance.where("sector = ?", params[:sector])
+    elsif params[:sector] != "all" && params[:location] == "all"
+      @finances = Finance.where("sector like ?", "%#{params[:sector]}%")
       @status = "We have found #{@finances.size} company(s) matching your criteria"
     else
-      @finances = Finance.where("sector = ? AND name = ?", params[:sector], params[:name])
+      @finances = Finance.where("sector like ? AND location like ?", "%#{params[:sector]}%", "%#{params[:location]}%")
       @status = "We have found #{@finances.size} company(s) matching your criteria"
       if @finances.size == 0
         @status = "No companies found"
       end
     end
+    @finances = @finances.order("name ASC")
     render :layout => 'select'
   end
   # GET /finances/1

@@ -4,7 +4,8 @@
   <thead style="text-align: left; padding-left: 0px;">
     <tr>
       <th width="200px">Name</th>
-      <th>Sector</th>
+      <th width="200px">Sector</th>
+      <th width="200px">Location</th>
     </tr>
   </thead>
 
@@ -13,8 +14,10 @@
       <tr>
         <td><%= link_to finance.name, finance %></td>
         <td><%= finance.sector %></td>
+        <td><%= finance.location %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<br/>
 </div>
