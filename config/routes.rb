@@ -1,4 +1,5 @@
 FinanceApp::Application.routes.draw do
+  get "users/new"
   resources :finances
   get 'select' => 'finances#select'
   get 'login' => 'finances#login'

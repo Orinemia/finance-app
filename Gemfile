@@ -32,6 +32,24 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :test, :development, :production do
+  gem 'selenium-webdriver'
+  gem 'capybara'
+end
+
+group :development, :test, :production do
+   gem 'rspec-rails'
+   gem 'guard-rspec'
+   gem 'guard-spork'
+   gem 'spork-rails'
+end
+
+group :production , :development do
+ gem 'rails_12factor'
+end
+
+
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
