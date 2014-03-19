@@ -1,11 +1,9 @@
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 <style type="text/css">
-  html { height: 100% }
-  body { height: 100%; margin: 0; padding: 0 }
   #map-canvas { 
     width: 550px;
     height: 550px;
-    margin-top: 40px;
+    margin-top: 30px;
     float: left;
     position: relative;
     margin-left: 10px;
@@ -15,37 +13,39 @@
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvxrtNIzHIO-kUxuK82OFKETpX9gBqkTg&sensor=false">
 </script>
 <script type="text/javascript">
-  var geocoder;
-  var map;
-  function initialize() {
-    geocoder = new google.maps.Geocoder();
-    var latlng = new google.maps.LatLng(-34.397, 150.644);
-    var mapOptions = {
-      zoom: 8,
-      center: latlng
+  
+var geocoder;
+var map;
+function initialize() {
+  geocoder = new google.maps.Geocoder();
+  var latlng = new google.maps.LatLng(-34.397, 150.644);
+  var mapOptions = {
+    zoom: 8,
+    center: latlng
+  }
+  map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+}
+
+function codeAddress() {
+  var address = document.getElementById("adress").innerHTML;
+  geocoder.geocode( { 'address': address}, function(results, status) {
+    if (status == google.maps.GeocoderStatus.OK) {
+      map.setCenter(results[0].geometry.location);
+      var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location
+      });
+    } else {
+      alert("Geocode was not successful for the following reason: " + status);
     }
-    map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-  }
-
-  function codeAddress() {
-    var address = document.getElementById("adress").innerHTML;
-    geocoder.geocode( { 'address': address}, function(results, status) {
-      if (status == google.maps.GeocoderStatus.OK) {
-        map.setCenter(results[0].geometry.location);
-        var marker = new google.maps.Marker({
-            map: map,
-            position: results[0].geometry.location
-        });
-      } else {
-        alert("Geocode was not successful for the following reason: " + status);
-      }
-    });
-  }
-
+  });
+}
 window.onload = function() {
     initialize();
     codeAddress();
 }
+
+
 
 </script>
 
@@ -114,8 +114,8 @@ window.onload = function() {
   <%= @finance.location %>
 </div>
 <br/>
-
-<%= link_to 'Back', finances_path %>
+<a href="/stats/<%= @finance.id%>">Stats</a>
+<%= link_to 'Back', :back %>
 </div>
 
 <div id="map-canvas"/></div>

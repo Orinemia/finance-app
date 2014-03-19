@@ -27,7 +27,7 @@
   <form>
     <p><strong>Please select Sector and Location</strong></p>
     <label for="sector">Sector: </label><br/>
-    <select id="sector" name="sector">
+    <select id="sector" name="sector" onchange="loadXMLDoc()">
       <option value="all">All</option>
       <option value="Consumer Discretionary">Consumer Discretionary</option>
       <option value="Consumer Staples">Consumer Staples</option>
@@ -41,7 +41,7 @@
       <option value="Utilities">Utilities</option>
     </select><br/>
     <label for="location">Location: </label><br/>
-    <select id="location" name="location">
+    <select id="location" name="location" onchange="loadXMLDoc()">
       <option value="all">All</option>
       <option value="Alabama">Alabama</option>
       <option value="Arizona">Arizona</option>
@@ -90,5 +90,8 @@
   <button type="button" onclick="loadXMLDoc()">Show</button>
 </div>
 <div id="myDiv" class="grid_8">
+  <h1>Welcome!</h1>
+  <p>This is an application that can let you find all the details about companies on S&amp;P 500. We have provided stats for reference.</p>
+  <p>Guest can only view the list while registered users have access to the company's details, Register Now!</p>
 </div>
 

@@ -5,11 +5,13 @@ FinanceApp::Application.routes.draw do
   get 'login' => 'finances#login'
   get 'signup' => 'finances#signup'
   get 'show' => 'finance#show'
+  get 'search' => 'finances#search'
+  get 'stats/:id' => 'finances#stats'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'finances#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

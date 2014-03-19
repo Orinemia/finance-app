@@ -28,6 +28,22 @@ class FinancesController < ApplicationController
     @finances = @finances.order("name ASC")
     render :layout => 'select'
   end
+
+  def search
+    @finances = Finance.where("lower(location) like ? OR lower(sector) like ? OR lower(name) like ?", "%#{params[:query].downcase}%", "%#{params[:query].downcase}%", "%#{params[:query].downcase}%")
+    @status = "We have found #{@finances.size} company(s) matching your criteria"
+    @finances = @finances.order("name ASC")
+  end
+
+  def stats
+    @finance = Finance.find(params[:id])
+    if @finance.dividend_yield == nil
+      @finance.dividend_yield = 0
+    end
+    if @finance.price_earnings == nil
+      @finance.price_earnings = 0
+    end
+  end
   # GET /finances/1
   # GET /finances/1.json
   def show
@@ -90,6 +106,6 @@ class FinancesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def finance_params
-      params.require(:finance).permit(:name, :sector, :price, :dividend_yield, :price_earnings, :earnings_share, :book_value, :year_week_low, :year_week_high, :market_cap, :ebitda)
+      params.require(:finance).permit(:name, :sector, :price, :dividend_yield, :price_earnings, :earnings_share, :book_value, :year_week_low, :year_week_high, :market_cap, :ebitda, :location)
     end
 end

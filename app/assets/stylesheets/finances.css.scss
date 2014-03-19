@@ -2,8 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 html {
-	/*background-color: #6d9ab9;*/
-	background-image: url("bg.jpg");
+	background-color: #fff;
+	/*background-image: url("bg.jpg");*/
 	background-size: 100%;
 	background-repeat: no-repeat;
 	background-attachment:fixed;
@@ -18,11 +18,11 @@ select {
 
 
 .compdetail {
-	margin-top: 40px;
-	background-color: #fff;
-	-webkit-border-radius: 5px;
+	margin-top: 30px;
+	background-color: #EFEFEF;
+/*	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
-	border-radius: 5px;
+	border-radius: 5px;*/
 	padding-left: 10px;
 	padding-bottom: 10px;
 }
@@ -30,11 +30,11 @@ select {
 .sidebar {
 	/*margin-left: 10px;*/
 	position: fixed;
-	background-color: #fff;
+	background-color: #EFEFEF;
 	padding-left: 10px;
-	-webkit-border-radius: 5px;
+/*	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
-	border-radius: 5px;
+	border-radius: 5px;*/
 	max-width: 260px;
 	padding-bottom: 10px;
 	margin-top: 30px;
@@ -42,28 +42,29 @@ select {
 
 #myDiv {
 	position: relative;
-	background-color: #fff;
+	background-color: #EFEFEF;
 	z-index: 0;
 	margin-left: 300px;
-	-webkit-border-radius: 5px;
+/*	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
-	border-radius: 5px;
-	min-width: 650px;
+	border-radius: 5px;*/
+	max-width: 610px;
 	float: left;
 	margin-bottom: 10px;
 	margin-top: 30px;
+	padding: 10px;
 }
 
 .navbar{
 	float: left;
 	width:100%;
 	/*background-color: #204477;*/
-	background-color: #000;
+	background-color: #2bb24c;
 	position: fixed;
 	top: 0px;
-	padding-bottom: 10px;
+	padding-bottom: 7px;
 	z-index: 9999;
-	padding-top: 10px;
+	padding-top: 7px;
 
 }
 
@@ -71,4 +72,43 @@ select {
 	float: left;
 	position: relative;
 	color: #fff;
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 14px;
+	margin-left: 10px;
+}
+
+.navitem a:hover {
+	text-decoration: underline;
+}
+
+.result {
+	position: relative;
+	background-color: #EFEFEF;
+	z-index: 0;
+	width: 900px;
+	/*max-width: 640px;*/
+/*	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;*/
+	/*float: left;*/
+	margin-bottom: 10px;
+	margin-top: 30px;
+	padding: 10px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.searchbox {
+	position: relative;
+	float: right;
+	margin-right: 10px;
+	border: 0px;
+}
+
+.icon {
+	position: fixed;
+	float: left;
+	margin-left: 10px;
 }

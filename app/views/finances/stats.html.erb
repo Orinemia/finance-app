@@ -1,0 +1,94 @@
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<style>
+      canvas{
+        background-color: #fff;
+        /*margin-top: 10px;*/
+        float: left;
+        position: relative;
+        margin-left: 50px;
+/*        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;*/
+      }
+</style>
+
+<div class="compdetail grid_4">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @finance.name %>
+</p>
+
+<p>
+  <strong>Sector:</strong>
+  <%= @finance.sector %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @finance.price %>
+</p>
+
+<p>
+  <strong>Dividend yield:</strong>
+  <%= @finance.dividend_yield %>
+</p>
+
+<p>
+  <strong>Price earnings:</strong>
+  <%= @finance.price_earnings %>
+</p>
+
+<p>
+  <strong>Earnings share:</strong>
+  <%= @finance.earnings_share %>
+</p>
+
+<p>
+  <strong>Book value:</strong>
+  <%= @finance.book_value %>
+</p>
+
+<p>
+  <strong>Year week low:</strong>
+  <%= @finance.year_week_low %>
+</p>
+
+<p>
+  <strong>Year week high:</strong>
+  <%= @finance.year_week_high %>
+</p>
+
+<p>
+  <strong>Market cap:</strong>
+  <%= @finance.market_cap %>
+</p>
+
+<p>
+  <strong>Ebitda:</strong>
+  <%= @finance.ebitda %>
+</p>
+
+<%= link_to 'Back', :back %>
+</div>
+<canvas id="canvas" height="450" width="450"></canvas>
+<script>
+
+    var radarChartData = {
+      labels : ["Price","Dividend yield","Price earnings","Earnings share","Book value","Year week low","Year week high", "Market Cap", "EBITDA"],
+      datasets : [
+        {
+          fillColor : "rgba(151,187,205,0.5)",
+          strokeColor : "rgba(151,187,205,1)",
+          pointColor : "rgba(151,187,205,1)",
+          pointStrokeColor : "#fff",
+          data : [<%= @finance.price %>,<%= @finance.dividend_yield %>,<%= @finance.price_earnings %>,<%= @finance.earnings_share %>,<%= @finance.book_value %>,<%= @finance.year_week_low %>,<%= @finance.year_week_high %>, <%= @finance.market_cap %>, <%= @finance.ebitda %>]
+        }
+      ]
+      
+    }
+
+  var myRadar = new Chart(document.getElementById("canvas").getContext("2d")).Radar(radarChartData,{scaleShowLabels : false, pointLabelFontSize : 10});
+  
+</script>
