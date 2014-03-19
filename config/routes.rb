@@ -1,4 +1,8 @@
 FinanceApp::Application.routes.draw do
+  get "static_pages/Home"
+  get "static_pages/Sign_in"
+  get "static_pages/Sign_up"
+  get "static_pages/Contact_us"
   get "users/new"
   resources :finances
   get 'select' => 'finances#select'
