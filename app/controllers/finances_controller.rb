@@ -4,7 +4,7 @@ class FinancesController < ApplicationController
   # GET /finances
   # GET /finances.json
   def index
-    @finances = Finance.all
+    @finances = nil
   end
 
   def select
@@ -30,12 +30,14 @@ class FinancesController < ApplicationController
   end
 
   def search
+    @search = true
     @finances = Finance.where("lower(location) like ? OR lower(sector) like ? OR lower(name) like ?", "%#{params[:query].downcase}%", "%#{params[:query].downcase}%", "%#{params[:query].downcase}%")
     @status = "We have found #{@finances.size} company(s) matching your criteria"
     @finances = @finances.order("name ASC")
   end
 
   def stats
+    @stats = true
     @finance = Finance.find(params[:id])
     if @finance.dividend_yield == nil
       @finance.dividend_yield = 0

@@ -18,7 +18,9 @@ select {
 
 
 .compdetail {
-	margin-top: 30px;
+	position: fixed;
+	float: left;
+	margin-top: 60px;
 	background-color: #EFEFEF;
 /*	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -37,7 +39,7 @@ select {
 	border-radius: 5px;*/
 	max-width: 260px;
 	padding-bottom: 10px;
-	margin-top: 30px;
+	margin-top: 60px;
 }
 
 #myDiv {
@@ -51,7 +53,7 @@ select {
 	max-width: 610px;
 	float: left;
 	margin-bottom: 10px;
-	margin-top: 30px;
+	margin-top: 60px;
 	padding: 10px;
 }
 
@@ -94,7 +96,7 @@ select {
 	border-radius: 5px;*/
 	/*float: left;*/
 	margin-bottom: 10px;
-	margin-top: 30px;
+	margin-top: 60px;
 	padding: 10px;
 	display: block;
 	margin-left: auto;
@@ -108,8 +110,15 @@ select {
 	border: 0px;
 }
 
-.icon {
+.pathbar {
 	position: fixed;
 	float: left;
-	margin-left: 10px;
+	width: 100%;
+	margin-top: 30px;
+}
+
+.pathitem {
+	margin-left: 20px;
+	position: relative;
+	float: left;
 }

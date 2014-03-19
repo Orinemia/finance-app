@@ -14,8 +14,23 @@
 		<div class="navitem"><a href="/login">Login</a></div>
 		<div class="searchbox"><form action="../search.html" method="get"><input type="search" name="query"></form></div>
 	</div><br/>
-
+<div class="pathbar grid_12">
+	<div class="pathitem"><a href="/">Home</a></div>
+	<%if @finance != nil %>
+		<div class="pathitem">></div>
+		<div class='pathitem'><a href="/finances/<%= @finance.id %>"><%= @finance.name %></a></div>
+	<%end%>
+	<%if @stats == true %>
+		<div class="pathitem">></div>
+		<div class='pathitem'>Stats</div>
+	<%end%>
+	<%if @search == true %>
+		<div class="pathitem">></div>
+		<div class='pathitem'>Search result(s)</div>
+	<%end%>
+</div>
 <div class="grid_12">
+
 	<%= yield %>
 </div>
 </body>
