@@ -22,11 +22,12 @@ select {
 	float: left;
 	margin-top: 60px;
 	background-color: #EFEFEF;
-/*	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;*/
 	padding-left: 10px;
 	padding-bottom: 10px;
+	border: 1px #d3d6db solid;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
 }
 
 .sidebar {
@@ -34,12 +35,13 @@ select {
 	position: fixed;
 	background-color: #EFEFEF;
 	padding-left: 10px;
-/*	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;*/
 	max-width: 260px;
 	padding-bottom: 10px;
 	margin-top: 60px;
+	border: 1px #d3d6db solid;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
 }
 
 #myDiv {
@@ -47,14 +49,15 @@ select {
 	background-color: #EFEFEF;
 	z-index: 0;
 	margin-left: 300px;
-/*	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;*/
 	max-width: 610px;
 	float: left;
 	margin-bottom: 10px;
 	margin-top: 60px;
 	padding: 10px;
+	border: 1px #d3d6db solid;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
 }
 
 .navbar{
@@ -90,17 +93,16 @@ select {
 	background-color: #EFEFEF;
 	z-index: 0;
 	max-width: 900px;
-	/*max-width: 640px;*/
-/*	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;*/
-	/*float: left;*/
 	margin-bottom: 10px;
 	margin-top: 60px;
 	padding: 10px;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+	border: 1px #d3d6db solid;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
 }
 
 .searchbox {
@@ -115,10 +117,28 @@ select {
 	float: left;
 	width: 100%;
 	margin-top: 30px;
+	/*background-color: #fff;*/
+	z-index: 999;
 }
 
 .pathitem {
 	margin-left: 20px;
 	position: relative;
 	float: left;
+}
+
+#searchresult {
+	float: right;
+	position: absolute;
+	width: 200px;
+	background-color: #fff;
+	right: 0px;
+	margin-top: 30px;
+	font-size: 10px;
+	border: 1px #d3d6db solid;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	z-index: 999;
+	padding: 10px;
 }

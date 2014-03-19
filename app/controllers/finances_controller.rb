@@ -31,9 +31,10 @@ class FinancesController < ApplicationController
 
   def search
     @search = true
-    @finances = Finance.where("lower(location) like ? OR lower(sector) like ? OR lower(name) like ?", "%#{params[:query].downcase}%", "%#{params[:query].downcase}%", "%#{params[:query].downcase}%")
-    @status = "We have found #{@finances.size} company(s) matching your criteria"
+    @finances = Finance.where("lower(name) like ?", "%#{params[:query].downcase}%")
+    @status = "No result found"
     @finances = @finances.order("name ASC")
+    render :layout => 'select'
   end
 
   def stats

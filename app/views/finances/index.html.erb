@@ -22,6 +22,37 @@
   xmlhttp.send();
   }
 </script>
+<script>
+  function loadsearch()
+  {
+  var xmlhttp;
+  if (window.XMLHttpRequest)
+    {// code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp=new XMLHttpRequest();
+    }
+  else
+    {// code for IE6, IE5
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+  xmlhttp.onreadystatechange=function()
+    {
+    if (xmlhttp.readyState==4 && xmlhttp.status==200)
+      {
+      document.getElementById('searchresult').style.display = "block";
+      document.getElementById("searchresult").innerHTML=xmlhttp.responseText;
+      }
+    if (str == "")
+    {
+      document.getElementById('searchresult').style.display = "none";
+    }
+    }
+    
+  var str = document.getElementById("searchbox").value;
+  xmlhttp.open("GET","search.html?query="+str,true);
+  xmlhttp.send();
+
+  }
+</script>
 <div class="sidebar grid_4">
   <h1>Listing Company</h1>
   <form>
