@@ -131,10 +131,15 @@ select {
 	right: 0px;
 	margin-top: 30px;
 	font-size: 10px;
-	border: 1px #d3d6db solid;
-	-webkit-border-radius: 2px;
-	-moz-border-radius: 2px;
-	border-radius: 2px;
+	border-left: 1px #d3d6db solid;
+	border-right: 1px #d3d6db solid;
+	border-bottom: 1px #d3d6db solid;
+	-webkit-border-bottom-left-radius: 2px;
+	-moz-border-bottom-left-radius: 2px;
+	border-bottom-left-radius: 2px;
+	-webkit-border-bottom-right-radius: 2px;
+	-moz-border-bottom-right-radius: 2px;
+	border-bottom-right-radius: 2px;
 	z-index: 999;
 	padding: 10px;
 }
