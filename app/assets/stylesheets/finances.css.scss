@@ -3,12 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 html {
 	background-color: #fff;
-	/*background-image: url("bg.jpg");*/
-	background-size: 100%;
-	background-repeat: no-repeat;
-	background-attachment:fixed;
-
 }
+
 
 select {
 	width: 180px;
@@ -16,9 +12,8 @@ select {
 }
 
 
-
 .compdetail {
-	position: fixed;
+	position: relative;
 	float: left;
 	margin-top: 60px;
 	background-color: #EFEFEF;
@@ -48,9 +43,9 @@ select {
 	position: relative;
 	background-color: #EFEFEF;
 	z-index: 0;
-	margin-left: 300px;
-	max-width: 610px;
-	float: left;
+	/*margin-left: 300px;*/
+	max-width: 605px;
+	float: right;
 	margin-bottom: 10px;
 	margin-top: 60px;
 	padding: 10px;
@@ -115,10 +110,11 @@ select {
 .pathbar {
 	position: fixed;
 	float: left;
-	width: 100%;
+	min-width: 100%;
 	margin-top: 30px;
 	/*background-color: #fff;*/
 	z-index: 999;
+	margin-left: 10px;
 }
 
 .pathitem {
