@@ -43,7 +43,7 @@
 	<div class="navbar grid_12">
 		<div class="navitem"><%= link_to "Home", finances_path %></div>
 		<div class="navitem"><a href="/login">Login</a></div>
-		<div class="searchbox"><input id="searchbox" type="search" name="query" onkeyup="loadsearch()"></div>
+		<div class="searchbox"><div id="hint"></div><input id="searchbox" type="text" name="query" onkeyup="loadsearch()" placeholder="search" autocapitalize="off" autocorrect="off"></div>
 		<div id="searchresult" style="display: none;"></div>
 	</div><br/>
 <div class="pathbar">

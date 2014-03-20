@@ -24,8 +24,8 @@
 </script>
 
 <div class="sidebar grid_4">
-  <h1>Listing Company</h1>
-  <form>
+  <div class="whiteback"><h1>Listing Company</h1></div>
+  <div class="therest"><form>
     <p><strong>Please select Sector and Location</strong></p>
     <label for="sector">Sector: </label><br/>
     <select id="sector" name="sector" onchange="loadXMLDoc()">
@@ -89,10 +89,15 @@
     </select><br/>
   </form>
   <button type="button" onclick="loadXMLDoc()">Show</button>
+  </div>
 </div>
 <div id="myDiv" class="grid_8">
+  <div class="whiteback">
   <h1>Welcome!</h1>
+  </div>
+  <div class="therest">
   <p>This is an application that can let you find all the details about companies on S&amp;P 500. We have provided stats for reference.</p>
   <p>Guest can only view the list while registered users have access to the company's details, Register Now!</p>
+  </div>
 </div>
 

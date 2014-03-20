@@ -5,31 +5,29 @@ html {
 	background-color: #fff;
 }
 
-
 select {
 	width: 180px;
 	margin-bottom: 10px;
 }
-
 
 .compdetail {
 	position: relative;
 	float: left;
 	margin-top: 60px;
 	background-color: #EFEFEF;
-	padding-left: 10px;
 	padding-bottom: 10px;
 	border: 1px #d3d6db solid;
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
 	border-radius: 2px;
+	max-width: 250px;
 }
 
 .sidebar {
 	/*margin-left: 10px;*/
 	position: fixed;
 	background-color: #EFEFEF;
-	padding-left: 10px;
+	/*padding-left: 10px;*/
 	max-width: 260px;
 	padding-bottom: 10px;
 	margin-top: 60px;
@@ -44,11 +42,11 @@ select {
 	background-color: #EFEFEF;
 	z-index: 0;
 	/*margin-left: 300px;*/
-	max-width: 605px;
+	max-width: 640px;
 	float: right;
 	margin-bottom: 10px;
 	margin-top: 60px;
-	padding: 10px;
+	padding-bottom: 10px;
 	border: 1px #d3d6db solid;
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
@@ -62,10 +60,17 @@ select {
 	background-color: #2bb24c;
 	position: fixed;
 	top: 0px;
-	padding-bottom: 7px;
+	padding-bottom: 5px;
 	z-index: 9999;
-	padding-top: 7px;
-	box-shadow: 0px 1px 20px #5E5E5E;
+	padding-top: 5px;
+	/*box-shadow: 0px 1px 20px #5E5E5E;*/
+	-webkit-border-bottom-left-radius: 2px;
+	-moz-border-bottom-left-radius: 2px;
+	border-bottom-left-radius: 2px;
+	-webkit-border-bottom-right-radius: 2px;
+	-moz-border-bottom-right-radius: 2px;
+	border-bottom-right-radius: 2px;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,.15);
 
 }
 
@@ -73,10 +78,14 @@ select {
 	float: left;
 	position: relative;
 	color: #fff;
-	font-weight: bold;
+	font-weight: 500;
 	text-decoration: none;
-	font-size: 14px;
+	font-size: 15px;
 	margin-left: 10px;
+	line-height: 23px;
+	padding: 0px;
+	letter-spacing: -0.02em;
+
 }
 
 .navitem a:hover {
@@ -105,13 +114,38 @@ select {
 	float: right;
 	margin-right: 10px;
 	border: 0px;
+	height: 20px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	color: #AAA;
+	background: #FFF url(//s3.feedly.com/production/head/images/icon-search-44-gray.png ) no-repeat;
+	-webkit-background-size: 24px 24px;
+	background-size: 20px 20px;
+	padding-left: 25px;
+	font-family: sans-serif;
+	background-color: #FFF;
+	display: block;
 }
+
+#searchbox, #searchbox:focus{
+	outline: 0;
+	-webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    border: 0px;
+    font-size: 10px;
+    line-height: 18px;
+    width: 120px;
+    border-radius: 2px;
+}
+
 
 .pathbar {
 	position: fixed;
 	float: left;
 	min-width: 100%;
-	margin-top: 30px;
+	margin-top: 25px;
 	/*background-color: #fff;*/
 	z-index: 999;
 	margin-left: 10px;
@@ -129,12 +163,42 @@ select {
 	width: 200px;
 	background-color: #fff;
 	right: 0px;
-	margin-top: 30px;
+	margin-top: 28px;
 	font-size: 10px;
-	border: 1px #d3d6db solid;
-	-webkit-border-radius: 2px;
-	-moz-border-radius: 2px;
-	border-radius: 2px;
+	border-left: 1px #d3d6db solid;
+	border-right: 1px #d3d6db solid;
+	border-bottom: 1px #d3d6db solid;
+	-webkit-border-bottom-left-radius: 2px;
+	-moz-border-bottom-left-radius: 2px;
+	border-bottom-left-radius: 2px;
+	-webkit-border-bottom-right-radius: 2px;
+	-moz-border-bottom-right-radius: 2px;
+	border-bottom-right-radius: 2px;
 	z-index: 999;
 	padding: 10px;
+}
+
+.whiteback {
+	background-color: #fff;
+	width: 100%;
+	/*border-bottom: 1px #d3d6db solid;*/
+	line-height: 55px;
+}
+.whiteback h1 {
+	margin-top: 0px;
+	font-weight: 600;
+	letter-spacing: -0.03em;
+	padding-left: 10px;
+	margin-bottom: 0px;
+}
+
+.therest {
+	border-top: 1px #d3d6db solid;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+}
+
+.therest table {
+	padding-top: 10px;
 }
