@@ -28,6 +28,7 @@
   <div class="therest"><form>
     <p><strong>Please select Sector and Location</strong></p>
     <label for="sector">Sector: </label><br/>
+    <div class="select-style">
     <select id="sector" name="sector" onchange="loadXMLDoc()">
       <option value="all">All</option>
       <option value="Consumer Discretionary">Consumer Discretionary</option>
@@ -40,8 +41,9 @@
       <option value="Materials">Materials</option>
       <option value="Telecommunications Services">Telecommunications Services</option>
       <option value="Utilities">Utilities</option>
-    </select><br/>
+    </select></div><br/>
     <label for="location">Location: </label><br/>
+    <div class="select-style">
     <select id="location" name="location" onchange="loadXMLDoc()">
       <option value="all">All</option>
       <option value="Alabama">Alabama</option>
@@ -86,9 +88,11 @@
       <option value="Virginia">Virginia</option>
       <option value="Washington">Washington</option>
       <option value="Wisconsin">Wisconsin</option>
-    </select><br/>
+    </select>
+    </div>
+    <br/>
   </form>
-  <button type="button" onclick="loadXMLDoc()">Show</button>
+  <button class="button-style" type="button" onclick="loadXMLDoc()">Show</button>
   </div>
 </div>
 <div id="myDiv" class="grid_8">

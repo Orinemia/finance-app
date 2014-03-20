@@ -114,29 +114,32 @@ select {
 	float: right;
 	margin-right: 10px;
 	border: 0px;
-	height: 20px;
+	height: 24px;
 	-moz-border-radius: 2px;
 	-webkit-border-radius: 2px;
 	border-radius: 2px;
 	color: #AAA;
 	background: #FFF url(//s3.feedly.com/production/head/images/icon-search-44-gray.png ) no-repeat;
 	-webkit-background-size: 24px 24px;
-	background-size: 20px 20px;
+	background-size: 24px 24px;
 	padding-left: 25px;
 	font-family: sans-serif;
 	background-color: #FFF;
 	display: block;
+	padding-top: 0px;
+	padding-bottom: 0px;
 }
 
 #searchbox, #searchbox:focus{
+	position: relative;
 	outline: 0;
 	-webkit-appearance:none;
     -moz-appearance:none;
     appearance:none;
     border: 0px;
-    font-size: 10px;
+    /*font-size: 10px;*/
     line-height: 18px;
-    width: 120px;
+    width: 100px;
     border-radius: 2px;
 }
 
@@ -182,7 +185,7 @@ select {
 	background-color: #fff;
 	width: 100%;
 	/*border-bottom: 1px #d3d6db solid;*/
-	line-height: 55px;
+	line-height: 40px;
 }
 .whiteback h1 {
 	margin-top: 0px;
@@ -190,6 +193,9 @@ select {
 	letter-spacing: -0.03em;
 	padding-left: 10px;
 	margin-bottom: 0px;
+	color: #494949;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 .therest {
@@ -201,4 +207,58 @@ select {
 
 .therest table {
 	padding-top: 10px;
+}
+
+.button-style {
+    padding: 6px;
+    background: #2bb24c;
+    color: #FFF;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    border: 0px;
+    font-weight: bold;
+    position: relative;
+    float: left;
+    /*margin-right: 10px;*/
+}
+
+.button-style:hover, .button-style:focus {
+    border: solid 0px #2A4E77;
+    text-decoration: none;
+    outline: 0;
+}
+.button-style:active {
+	background: #0e7429;
+    border: 0px;
+}
+
+.select-style {
+    border: 1px solid #ccc;
+    width: 200px;
+    border-radius: 2px;
+    overflow: hidden;
+    background: #fff url("arrowdown.gif") no-repeat 90% 50%;
+    height: 26px;
+    line-height: 18px;
+
+}
+
+.select-style select {
+    padding: 5px 8px;
+    width: 130%;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+}
+
+.select-style select:focus {
+    outline: none;
+}
+
+#select {
+	font-weight: bold;
+	/*line-height: 10px;*/
 }

@@ -52,7 +52,7 @@ window.onload = function() {
 <div class="compdetail grid_4">
 <div class="whiteback">
 <h1>
-  <%= @finance.name %>
+  <%= @finance.name.upcase %>
 </h1>
 </div>
 <div class="therest">
@@ -113,8 +113,14 @@ window.onload = function() {
   <%= @finance.location %>
 </div>
 <br/>
-<a href="/stats/<%= @finance.id%>">Stats</a>
-<%= link_to 'Back', "/" %>
+<div style="width: 100px;">
+<form action="/stats/<%= @finance.id%>">
+<input class="button-style" type="submit" value="Stats">
+</form></div>
+<div style="width: 100px;">
+<form action="/">
+<input class="button-style" type="submit" value="Back">
+</form></div>
 </div>
 </div>
 

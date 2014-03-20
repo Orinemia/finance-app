@@ -18,7 +18,7 @@
 <div class="compdetail grid_4">
 <div class="whiteback">
 <h1 style="font-weight: 600;letter-spacing: -0.03em;">
-  <%= @finance.name %>
+  <%= @finance.name.upcase %>
 </h1>
 </div>
 <div class="therest">
@@ -71,8 +71,9 @@
   <strong>Ebitda:</strong>
   <%= @finance.ebitda %>
 </p>
-
-<%= link_to 'Back', :back %>
+<form action="/finances/<%= @finance.id %>">
+<input class="button-style" type="submit" value="Back">
+</form>
 </div>
 </div>
 <canvas id="canvas" height="450" width="450"></canvas>
