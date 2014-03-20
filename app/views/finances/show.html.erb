@@ -1,12 +1,12 @@
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 <style type="text/css">
   #map-canvas { 
-    width: 590px;
+    width: 630px;
     height: 500px;
     margin-top: 60px;
     float: left;
     position: relative;
-    /*margin-left: 350px;*/
+    margin-left: 20px;
   }
 </style>
 <script type="text/javascript"
@@ -52,10 +52,9 @@ window.onload = function() {
 <div class="compdetail grid_4">
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
+<h1 style="font-weight: lighter;">
   <%= @finance.name %>
-</p>
+</h1>
 
 <p>
   <strong>Sector:</strong>

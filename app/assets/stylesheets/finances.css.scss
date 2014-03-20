@@ -5,12 +5,10 @@ html {
 	background-color: #fff;
 }
 
-
 select {
 	width: 180px;
 	margin-bottom: 10px;
 }
-
 
 .compdetail {
 	position: relative;
@@ -23,6 +21,7 @@ select {
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
 	border-radius: 2px;
+	max-width: 250px;
 }
 
 .sidebar {
@@ -62,9 +61,9 @@ select {
 	background-color: #2bb24c;
 	position: fixed;
 	top: 0px;
-	padding-bottom: 7px;
+	padding-bottom: 5px;
 	z-index: 9999;
-	padding-top: 7px;
+	padding-top: 5px;
 	box-shadow: 0px 1px 20px #5E5E5E;
 
 }
@@ -73,10 +72,13 @@ select {
 	float: left;
 	position: relative;
 	color: #fff;
-	font-weight: bold;
+	font-weight: lighter;
 	text-decoration: none;
-	font-size: 14px;
+	font-size: 15px;
 	margin-left: 10px;
+	line-height: 23px;
+	padding: 0px;
+
 }
 
 .navitem a:hover {
@@ -105,13 +107,15 @@ select {
 	float: right;
 	margin-right: 10px;
 	border: 0px;
+
 }
+
 
 .pathbar {
 	position: fixed;
 	float: left;
 	min-width: 100%;
-	margin-top: 30px;
+	margin-top: 25px;
 	/*background-color: #fff;*/
 	z-index: 999;
 	margin-left: 10px;
@@ -129,7 +133,7 @@ select {
 	width: 200px;
 	background-color: #fff;
 	right: 0px;
-	margin-top: 30px;
+	margin-top: 28px;
 	font-size: 10px;
 	border-left: 1px #d3d6db solid;
 	border-right: 1px #d3d6db solid;
