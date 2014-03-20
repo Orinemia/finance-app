@@ -36,13 +36,23 @@
   xmlhttp.send();
 
   }
-</script>
+  </script>
 </head>
 <body class="container_12">
 
 	<div class="navbar grid_12">
 		<div class="navitem"><%= link_to "Home", finances_path %></div>
-		<div class="navitem"><a href="/login">Login</a></div>
+    <div id="login">
+		  <div class="navitem login"><a href="/login">Login</a></div>
+      <div id="loginbox">
+        <p>Quick Login</p>
+        <form name="input" action="" method="post">
+        <label for="username">Username:</label><input type="text" name="username" id="username"><br/>
+        <label for="password">Password:</label><input type="password" name="password" id="password"><br/><br/>
+        <input type="submit" value="Submit" class="button-style">
+        </form>
+      </div>
+    </div>
 		<div class="searchbox"><div id="hint"></div><input id="searchbox" type="text" name="query" onkeyup="loadsearch()" placeholder="search" autocapitalize="off" autocorrect="off"></div>
 		<div id="searchresult" style="display: none;"></div>
 	</div><br/>
@@ -59,6 +69,7 @@
 
 </div>
 <div class="grid_12">
+
 
 	<%= yield %>
 </div>
