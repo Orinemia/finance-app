@@ -11,16 +11,16 @@ class FinancesController < ApplicationController
     
     if params[:sector] == "all" && params[:location] == "all"
       @finances = Finance.all
-      @status = "We have found #{@finances.size} company(s) matching your criteria"
+      @status = "We have found #{@finances.size} company(s)"
     elsif params[:sector] == "all" && params[:location] != "all"
       @finances = Finance.where("location like ?", "%#{params[:location]}%")
-      @status = "We have found #{@finances.size} company(s) matching your criteria"
+      @status = "We have found #{@finances.size} company(s)"
     elsif params[:sector] != "all" && params[:location] == "all"
       @finances = Finance.where("sector like ?", "%#{params[:sector]}%")
-      @status = "We have found #{@finances.size} company(s) matching your criteria"
+      @status = "We have found #{@finances.size} company(s)"
     else
       @finances = Finance.where("sector like ? AND location like ?", "%#{params[:sector]}%", "%#{params[:location]}%")
-      @status = "We have found #{@finances.size} company(s) matching your criteria"
+      @status = "We have found #{@finances.size} company(s)"
       if @finances.size == 0
         @status = "No companies found"
       end

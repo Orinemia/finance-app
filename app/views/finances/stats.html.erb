@@ -16,12 +16,12 @@
 </style>
 
 <div class="compdetail grid_4">
-<p id="notice"><%= notice %></p>
-
-<h1 style="font-weight: lighter;">
+<div class="whiteback">
+<h1 style="font-weight: 600;letter-spacing: -0.03em;">
   <%= @finance.name %>
 </h1>
-
+</div>
+<div class="therest">
 <p>
   <strong>Sector:</strong>
   <%= @finance.sector %>
@@ -73,6 +73,7 @@
 </p>
 
 <%= link_to 'Back', :back %>
+</div>
 </div>
 <canvas id="canvas" height="450" width="450"></canvas>
 <script>
