@@ -48,6 +48,7 @@
 	</div><br/>
 <div class="pathbar">
 	<%if @finance != nil %>
+    <div class="pathitem"><a href="/">Home</a></div>
 		<div class="pathitem">></div>
 		<div class='pathitem'><a href="/finances/<%= @finance.id %>"><%= @finance.name %></a></div>
 	<%end%>
