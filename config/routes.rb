@@ -3,7 +3,7 @@ FinanceApp::Application.routes.draw do
   resources :finances
   resources :users
   
-  root  'static_pages#home'
+  root  'static_pages#index'
    
   match '/signin',               to:  'sessions#login' ,            via: 'get'
   match '/signout',              to:  'sessions#destroy',         via: 'delete'
