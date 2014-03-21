@@ -3,9 +3,6 @@ class FinancesController < ApplicationController
 
   # GET /finances
   # GET /finances.json
-  def index
-    @finances = nil
-  end
 
   def select
     
@@ -25,14 +22,6 @@ class FinancesController < ApplicationController
         @status = "No companies found"
       end
     end
-    @finances = @finances.order("name ASC")
-    render :layout => 'select'
-  end
-
-  def search
-    @search = true
-    @finances = Finance.where("lower(name) like ?", "%#{params[:query].downcase}%")
-    @status = "No result found"
     @finances = @finances.order("name ASC")
     render :layout => 'select'
   end

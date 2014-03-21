@@ -46,7 +46,6 @@ select {
 .sidebar {
 	/*margin-left: 10px;*/
 	position: fixed;
-	background-color: #EFEFEF;
 	/*padding-left: 10px;*/
 	max-width: 260px;
 	padding-bottom: 10px;
@@ -55,6 +54,7 @@ select {
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
 	border-radius: 2px;
+	background-color: #EFEFEF;
 }
 
 #myDiv {
@@ -163,7 +163,7 @@ select {
 	margin-bottom: 0px;
 	padding-top: 2px;
 	padding-bottom: 7px;
-	width: 70px;
+	/*width: 70px;*/
 }
 
 #login:hover #loginbox {
@@ -365,4 +365,22 @@ br {
 	position: relative;
 	float: left;
 	margin-right: 10px;
+}
+
+.loginpage {
+	margin-top: 30px;
+	border: 1px #d3d6db solid;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	background-color: #EFEFEF;
+}
+
+.registerpage {
+	margin-top: 30px;
+	border: 1px #d3d6db solid;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	background-color: #EFEFEF;
 }

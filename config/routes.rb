@@ -5,13 +5,13 @@ FinanceApp::Application.routes.draw do
   
   root  'static_pages#home'
    
-  match '/signin',               to:  'sessions#new' ,            via: 'get'
+  match '/signin',               to:  'sessions#login' ,            via: 'get'
   match '/signout',              to:  'sessions#destroy',         via: 'delete'
-  match '/signup',               to:  'users#new' ,               via: 'get'
+  match '/signup',               to:  'users#register' ,               via: 'get'
   match '/contactus',            to:  'static_pages#contactus',   via: 'get'
   #match '/select',               to:  'static_pages#select',      via: 'get'
   #match '/show',                 to:  'static_pages#show',        via: 'get'
-  match '/search',               to:  'static_pages#search',      via: 'get'
+  # match 'search',               to:  'static_pages#search',      via: 'get'
   #match '/stats/:id',            to:  'static_pages#stats',       via: 'get'
   
   
@@ -19,7 +19,7 @@ FinanceApp::Application.routes.draw do
   #get 'login' => 'finances#login'
   #get 'signup' => 'finances#signup'
   get 'show' => 'finance#show'
-  #get 'search' => 'finances#search'
+  get 'search' => 'static_pages#search'
   get 'stats/:id' => 'finances#stats' 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

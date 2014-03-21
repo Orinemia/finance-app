@@ -1,0 +1,21 @@
+<% if @finances.size == 0 %>
+  <%= @status %>
+<% else %>
+<table>
+  <thead style="text-align: left;">
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @finances.each do |finance| %>
+      <tr>
+        <td style="font-size: 11px;"><%= link_to finance.name, finance %></td>
+<!--         <td><%= finance.sector %></td>
+        <td><%= finance.location %></td> -->
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>

@@ -51,23 +51,33 @@
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 	<div class="navbar grid_12">
 		<div class="navitem"><a href="/">Home</a></div>
-		<div class="navitem"><a href="/login">Login</a></div>
-    <div class="navitem"><a href="/signup">Register!</a></div>
-    <div id="loginbox">
+    <div id="login">
+  		<div class="navitem login"><a href="/signin">Login</a></div>
+      <div id="loginbox">
         <p><strong>Quick Login</strong></p>
-        <form name="input" action="" method="post">
+        <!-- <form name="input" action="" method="post">
         <label for="username">Username:</label><input type="text" name="username" id="username"><br/>
         <label for="password">Password:</label><input type="password" name="password" id="password"><br/><br/>
         <input type="submit" value="Submit" class="button-style">
-        </form>
+        </form> -->
+        <%= form_for(:session, url: sessions_path) do |f| %>
+
+          <%= f.label :email %>
+          <%= f.text_field :email %>
+
+          <%= f.label :password %>
+          <%= f.password_field :password %>
+
+          <%= f.submit "Sign in", class: "button-style" %>
+        <% end %>
       </div>
     </div>
+    <div class="navitem"><a href="/signup">Register</a></div>
     <div class="searchbox"><div id="hint"></div><input id="searchbox" type="text" name="query" onkeyup="loadsearch()" placeholder="search" autocapitalize="off" autocorrect="off"></div>
 		<div id="searchresult" style="display: none;"></div>
 	</div><br/>
   <div class="pathbar">
 	<%if @finance != nil %>
-  <div class="pathitem">></div>
 		<div class='pathitem'><a href="/finances/<%= @finance.id %>"><%= @finance.name %></a></div>
 	<%end%>
 	<%if @stats == true %>
@@ -77,7 +87,7 @@
 </div>
 <div class="grid_12">
   <%= yield %>
- </div> 
+</div> 
    <div class="container">
      <% flash.each do |key, value| %>
        <div class="alert alert-<%= key %>"><%= value %></div>
