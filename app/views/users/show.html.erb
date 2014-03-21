@@ -1,6 +1,12 @@
 <% provide(:title, @user.name) %>
+<div class="grid_6 showuser">
+<div class="whiteback">
 <h1>
 	<%= gravatar_for @user %>
-	<%= @user.name %>
+	<%= @user.name.upcase %>
 </h1>
-
+</div>
+<div class="therest">
+Placeholder for anything else
+</div>
+</div>
