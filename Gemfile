@@ -45,11 +45,14 @@ group :development, :test, :production do
    gem 'guard-rspec'
    gem 'guard-spork'
    gem 'spork-rails'
+   gem 'factory_girl_rails', '4.2.1'
 end
 
 group :production , :development do
  gem 'rails_12factor'
 end
+
+
 
 
 
