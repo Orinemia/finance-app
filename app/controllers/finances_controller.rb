@@ -60,6 +60,7 @@ class FinancesController < ApplicationController
 
   # GET /finances/1/edit
   def edit
+    @finance = Finance.find(params[:id])
   end
 
   # POST /finances
