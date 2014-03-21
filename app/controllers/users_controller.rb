@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   		  flash[:success] = "Welcome to the Finance App!"
   	      redirect_to @user
     else
-    	render 'new'
+    	render 'register'
     end
   end
 
