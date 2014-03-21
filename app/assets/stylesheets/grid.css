@@ -13,6 +13,8 @@
   Note: IE6 works fine without this fix.
 */
 
+/*IMPORTED BY COLLOQUE TSUI*/
+
 body {
   min-width: 960px;
 }

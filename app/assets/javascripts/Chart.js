@@ -7,6 +7,8 @@
  * https://github.com/nnnick/Chart.js/blob/master/LICENSE.md
  */
 
+ //IMPORTED BY COLLOQUE TSUI
+
 //Define the global Chart Variable as a class.
 window.Chart = function(context){
 

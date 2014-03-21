@@ -1,13 +1,13 @@
-FinanceApp::Application.routes.draw do
+FinanceApp::Application.routes.draw do  # Orinemia Ajulo
   resources :sessions, only: [:new, :create, :destroy]
   resources :finances
   resources :users
   
   root  'static_pages#index'
    
-  match '/signin',               to:  'sessions#login' ,            via: 'get'
+  match '/signin',               to:  'sessions#login' ,          via: 'get'
   match '/signout',              to:  'sessions#destroy',         via: 'delete'
-  match '/signup',               to:  'users#register' ,               via: 'get'
+  match '/signup',               to:  'users#register' ,          via: 'get'
   match '/contactus',            to:  'static_pages#contactus',   via: 'get'
   #match '/select',               to:  'static_pages#select',      via: 'get'
   #match '/show',                 to:  'static_pages#show',        via: 'get'

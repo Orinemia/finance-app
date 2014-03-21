@@ -1,18 +1,19 @@
 <% provide(:title, @user.name) %>
+<div class="grid_6 showuser">
+<div class="whiteback">
 <h1>
 	<%= gravatar_for @user %>
-	<%= @user.name %>
+	<h2> Welcome <%= @user.name.upcase %>!</h2>
 </h1>
-<html>
-<body>
-<%= link_to "finance app", root_path%>
 
-   <li><%= link_to "Home", root_path %></li>
-   <% if signed_in? %>
-   <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
-   <% else %>
-    <li><%= link_to "Sign in", signin_path %></li>
-    <% end %>
-</body>
-</html>
 
+<div class="therest">
+      <% if signed_in? %>
+        <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+        <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
+      <% else %>
+         <li><%= link_to "Sign in", signin_path %></li>
+      <% end %>
+</div>
+</div>
+</div>

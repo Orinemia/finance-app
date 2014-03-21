@@ -1,3 +1,19 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*BY COLLOQUE TSUI*/
+.showuser {
+	margin-top: 30px;
+	border: 1px #d3d6db solid;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	background-color: #EFEFEF;
+}
+
+.showuser img {
+	height: 50px;
+	margin-right: 10px;
+	vertical-align: middle;
+}

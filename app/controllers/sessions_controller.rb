@@ -10,8 +10,8 @@ class SessionsController < ApplicationController
   		redirect_to user
   		# (Orinemia) This should sign the user in and redirect to the user's show page.
   	else
-  		flash.now[:error] = 'Invalid email/password combination'  # We'll manage this for now.
-  		render 'new'
+  		@error = "Invalid email/password combination"  # We'll manage this for now.
+  		render 'login'
   	end
   end
 
