@@ -1,5 +1,4 @@
 class StaticPagesController < ApplicationController
-  before_action :signed_in_user, only: [:search]
 
   def Home
   end
@@ -14,7 +13,6 @@ class StaticPagesController < ApplicationController
   end
 
   def search
-    @search = true
     @finances = Finance.where("lower(name) like ?", "%#{params[:query].downcase}%")
     @status = "No result found"
     @finances = @finances.order("name ASC")

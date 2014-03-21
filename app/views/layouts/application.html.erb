@@ -53,6 +53,7 @@
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 	<div class="navbar grid_12">
 		<div class="navitem"><a href="/">Home</a></div>
+    <% if signed_in? != true %>
     <div id="login">
   		<div class="navitem login"><a href="/signin">Login</a></div>
       <div id="loginbox">
@@ -66,18 +67,18 @@
           <%= f.password_field :password %>
 
           <%= f.submit "Sign in", class: "button-style" %>
-          <% end %>
-        
-        <!-- <form name="input" action="" method="post">
-        <label for="username">Username:</label><input type="text" name="username" id="username"><br/>
-        <label for="password">Password:</label><input type="password" name="password" id="password"><br/><br/>
-        <input type="submit" value="Submit" class="button-style">
-        </form> -->
+        <% end %>
         </div>
     </div>
-    <div class="navitem"><%= link_to "Logout", signout_path, method: "delete" %></a></div>
-    <div class="navitem"><a href="/signup">Register</a></div>
-    <div class="searchbox"><div id="hint"></div><input id="searchbox" type="text" name="query" onkeyup="loadsearch()" placeholder="search" autocapitalize="off" autocorrect="off"></div>
+    <% end %>
+    <% if signed_in? == true %>
+      <div class="navitem" style="padding-bottom: 7px;"><a href="../users/<%= @current_user.id %>"><%= current_user.name %></a></div>
+      <div class="navitem" style="padding-bottom: 7px;"><%= link_to "Logout", signout_path, method: "delete" %></a></div>
+    <% end %>
+    <% if signed_in? != true %>
+      <div class="navitem"><a href="/signup">Register</a></div>
+    <% end %>
+    <div class="searchbox"><input id="searchbox" type="text" name="query" onkeyup="loadsearch()" placeholder="search" autocapitalize="off" autocorrect="off"></div>
 		<div id="searchresult" style="display: none;"></div>
 	</div><br/>
   <div class="pathbar">

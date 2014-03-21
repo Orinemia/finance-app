@@ -1,6 +1,10 @@
 class UsersController < ApplicationController  # Written by Orinemia Ajulo
  
   def show
+  if signed_in? == false
+    flash[:success] = "Only registered user can access this page"
+    redirect_to '/signin'
+  end
   	@user = User.find(params[:id])
   end
   
@@ -20,6 +24,10 @@ class UsersController < ApplicationController  # Written by Orinemia Ajulo
   end
 
   def edit
+    if signed_in? == false
+      flash[:success] = "Only registered user can access this page"
+      redirect_to '/signin'
+    end
     @user = User.find(params[:id])
   end
 

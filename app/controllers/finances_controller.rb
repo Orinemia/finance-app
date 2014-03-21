@@ -1,5 +1,6 @@
 class FinancesController < ApplicationController
   before_action :set_finance, only: [:show, :edit, :update, :destroy]
+  include SessionsHelper
 
   # GET /finances
   # GET /finances.json
@@ -27,7 +28,12 @@ class FinancesController < ApplicationController
     render :layout => 'select'
   end
 
+
   def stats
+    if signed_in? == false
+      flash[:success] = "Only registered user can access this page"
+      redirect_to '/signin'
+    end
     @stats = true
     @finance = Finance.find(params[:id])
     if @finance.dividend_yield == nil
@@ -40,58 +46,63 @@ class FinancesController < ApplicationController
   # GET /finances/1
   # GET /finances/1.json
   def show
+  if signed_in? == false
+    flash[:success] = "Only registered user can access this page"
+    redirect_to '/signin'
+  end
+
     @finance = Finance.find(params[:id])
   end
 
   # GET /finances/new
-  def new
-    @finance = Finance.new
-  end
+  # def new
+  #   @finance = Finance.new
+  # end
 
-  # GET /finances/1/edit
-  def edit
-    @finance = Finance.find(params[:id])
-  end
+  # # GET /finances/1/edit
+  # def edit
+  #   @finance = Finance.find(params[:id])
+  # end
 
-  # POST /finances
-  # POST /finances.json
-  def create
-    @finance = Finance.new(finance_params)
+  # # POST /finances
+  # # POST /finances.json
+  # def create
+  #   @finance = Finance.new(finance_params)
 
-    respond_to do |format|
-      if @finance.save
-        format.html { redirect_to @finance, notice: 'Finance was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @finance }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @finance.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  #   respond_to do |format|
+  #     if @finance.save
+  #       format.html { redirect_to @finance, notice: 'Finance was successfully created.' }
+  #       format.json { render action: 'show', status: :created, location: @finance }
+  #     else
+  #       format.html { render action: 'new' }
+  #       format.json { render json: @finance.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
-  # PATCH/PUT /finances/1
-  # PATCH/PUT /finances/1.json
-  def update
-    respond_to do |format|
-      if @finance.update(finance_params)
-        format.html { redirect_to @finance, notice: 'Finance was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @finance.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  # # PATCH/PUT /finances/1
+  # # PATCH/PUT /finances/1.json
+  # def update
+  #   respond_to do |format|
+  #     if @finance.update(finance_params)
+  #       format.html { redirect_to @finance, notice: 'Finance was successfully updated.' }
+  #       format.json { head :no_content }
+  #     else
+  #       format.html { render action: 'edit' }
+  #       format.json { render json: @finance.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
-  # DELETE /finances/1
-  # DELETE /finances/1.json
-  def destroy
-    @finance.destroy
-    respond_to do |format|
-      format.html { redirect_to finances_url }
-      format.json { head :no_content }
-    end
-  end
+  # # DELETE /finances/1
+  # # DELETE /finances/1.json
+  # def destroy
+  #   @finance.destroy
+  #   respond_to do |format|
+  #     format.html { redirect_to finances_url }
+  #     format.json { head :no_content }
+  #   end
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
