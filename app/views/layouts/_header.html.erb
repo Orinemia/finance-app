@@ -1,18 +1,8 @@
-<% provide(:title, @user.name) %>
-<h1>
-	<%= gravatar_for @user %>
-	<%= @user.name %>
-</h1>
-<html>
-<body>
 <%= link_to "finance app", root_path%>
-
+<ul>
    <li><%= link_to "Home", root_path %></li>
    <% if signed_in? %>
    <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
    <% else %>
     <li><%= link_to "Sign in", signin_path %></li>
-    <% end %>
-</body>
-</html>
-
+</ul>
