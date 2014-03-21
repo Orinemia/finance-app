@@ -1,4 +1,4 @@
-
+# BY COLLOQUE TSUI
 RAILS_ENV = 'development'
 require File.expand_path('../environment', __FILE__)
 
@@ -19,8 +19,8 @@ f.each_line do |line|
    ebitda = @temp[10]
    location = @temp[11]#as locations contain comma, I used gsub to keep only alphebets and spaces
    if @temp.size == 13
-      location = "#{@temp[11].delete!"\""}, #{@temp[12].delete!"\""}"
-      location = location.chomp
+      location = "#{@temp[11].delete!"\""}, #{@temp[12].delete!"\""}" #delete the quotation mark
+      location = location.chomp #delete '\n'
    end
    @finance = Finance.new
    @finance.name = name

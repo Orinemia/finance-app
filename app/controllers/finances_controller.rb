@@ -4,7 +4,8 @@ class FinancesController < ApplicationController
   # GET /finances
   # GET /finances.json
 
-  def select
+
+  def select # BY COLLOQUE TSUI
     
     if params[:sector] == "all" && params[:location] == "all"
       @finances = Finance.all
